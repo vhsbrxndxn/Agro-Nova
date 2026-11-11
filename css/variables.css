@@ -1,6 +1,4 @@
-/* Paleta "Agro-Nova Modernizada":
-   Atiende la recomendación del mercado meta (pág. 34) de modernizar la paleta gráfica
-   y tipografía conservando el verde agrícola y el acento tecnológico de los circuitos. */
+/* Paleta "Agro-Nova Modernizada" y sistema fluido para todos los dispositivos */
 :root {
   --color-fondo: #f2f6f3;
   --color-superficie: #ffffff;
@@ -20,12 +18,21 @@
   --color-peligro-fondo: #fee2e2;
 
   --fuente-moderna: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --fuente-mono: "Consolas", monospace;
+  --fuente-mono: "Consolas", "Monaco", monospace;
+
+  /* Espaciados fluidos que se ajustan según el tamaño de pantalla */
+  --espacio-xs: clamp(0.35rem, 0.8vw, 0.5rem);
+  --espacio-sm: clamp(0.65rem, 1.5vw, 0.9rem);
+  --espacio-md: clamp(0.95rem, 2.2vw, 1.4rem);
+  --espacio-lg: clamp(1.25rem, 3vw, 2rem);
+
+  /* Tamaños tipográficos fluidos */
+  --texto-base: clamp(0.95rem, 1vw, 1rem);
+  --texto-subtitulo: clamp(1.02rem, 1.5vw, 1.15rem);
+  --texto-titulo-modulo: clamp(1.15rem, 2.2vw, 1.4rem);
+  --texto-marca: clamp(1.2rem, 3vw, 1.55rem);
 
   --radio-md: 0.6rem;
-  --espacio-xs: 0.4rem;
-  --espacio-sm: 0.8rem;
-  --espacio-md: 1.25rem;
-  --espacio-lg: 1.75rem;
-  --ancho-app: 1160px;
+  --altura-tactil: 2.75rem; /* 44px mínimo recomendado para botones e inputs en móvil */
+  --ancho-app: 1200px;
 }
