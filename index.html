@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agro-Nova | Consultor Agrícola de Bolsillo</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="cabecera-contenedor">
+      <div class="marca-bloque">
+        <!-- Logotipo: hoja verde combinada con circuitos tecnológicos -->
+        <svg class="icono-marca" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M26 4C14 4 6 12 6 22c0 3.3 1.2 6 1.2 6l2.6-1.2C9.2 24.5 9 22.8 9 21c0-6.5 5.5-12 13-13-4.5 3-7 7.5-7 13h3c0-5 3-9.5 8-11v1c0 7-4.5 13-11 14.5V28c9-1.5 15-9.5 15-19V4h-4z"/>
+          <circle cx="16" cy="14" r="1.8"/>
+          <circle cx="20" cy="10" r="1.8"/>
+        </svg>
+        <div>
+          <span class="marca-titulo">AGRO-NOVA</span>
+          <p class="marca-slogan">TU CAMPO tu control</p>
+        </div>
+      </div>
+
+      <!-- Conmutador de Modo Offline (Mejora obligatoria de validación pág. 34) -->
+      <div class="estado-red">
+        <button type="button" id="btn-modo-red" class="boton-red online">
+          Modo Online Activo (24/7)
+        </button>
+        <span id="indicador-sincronizacion" class="texto-sincronizacion">Datos sincronizados</span>
+      </div>
+    </div>
+
+    <!-- Navegación directa de iconografía clara -->
+    <nav id="nav-principal" class="navegacion-modulos" aria-label="Módulos de Agro-Nova">
+      <button type="button" class="tab-modulo activo" data-modulo="mod-diagnostico">
+        1. Diagnóstico por Foto
+      </button>
+      <button type="button" class="tab-modulo" data-modulo="mod-planificador">
+        2. Riego y Fertilización
+      </button>
+      <button type="button" class="tab-modulo" data-modulo="mod-clima">
+        3. Alerta Climática
+      </button>
+      <button type="button" class="tab-modulo" data-modulo="mod-bitacora">
+        4. Bitácora y Reportes
+      </button>
+      <button type="button" class="tab-modulo" data-modulo="mod-planes">
+        Planes y Alianzas
+      </button>
+      <button type="button" class="tab-modulo" data-modulo="mod-planes">
+        Planes y Alianzas
+      </button>
+      <a href="manual.html" class="tab-modulo" style="text-decoration: none;">
+        Manual de Usuario y Ficha Técnica
+      </a>
+    </nav>
+    </nav>
+  </header>
+
+  <main class="contenedor-app">
+    <!-- Banner de propuesta de valor y métricas de impacto -->
+    <section class="banner-valor">
+      <div>
+        <h1 class="titulo-banner">Accesibilidad de Precisión sin Hardware</h1>
+        <p class="texto-banner">
+          Transformamos la intuición agrícola en decisiones de precisión: software de bajo costo con IA para maximizar su cosecha sin requerir sensores costosos.
+        </p>
+      </div>
+      <div class="metricas-rapidas">
+        <div class="insignia-metrica">
+          <strong>-15% a -20%</strong>
+          <span>Uso de agroquímicos</span>
+        </div>
+        <div class="insignia-metrica">
+          <strong>+25%</strong>
+          <span>Rendimiento proyectado</span>
+        </div>
+        <div class="insignia-metrica">
+          <strong>Máx. 3 pasos</strong>
+          <span>Flujo simplificado</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÓDULO 1: DIAGNÓSTICO Y CONTROL DE PLAGAS -->
+    <section id="mod-diagnostico" class="vista-modulo">
+      <div class="encabezado-modulo">
+        <h2>1. Módulo de Diagnóstico y Control de Plagas</h2>
+        <span class="etiqueta-flujo">Flujo en 3 interacciones</span>
+      </div>
+      <p class="descripcion-modulo">
+        Suba una foto de su cultivo, indique su región y tipo de siembra para identificar plagas o enfermedades en tiempo real y recibir tratamientos químicos u orgánicos.
+      </p>
+
+      <div class="layout-dos-columnas">
+        <form id="form-diagnostico" class="tarjeta-operativa">
+          <div class="campo-grupo">
+            <label for="input-foto">Paso 1: Fotografía del cultivo o síntoma observado</label>
+            <input id="input-foto" type="file" accept="image/*">
+            <small class="ayuda-campo">Puede cargar una imagen de su teléfono o seleccionar el síntoma detectado en su parcela:</small>
+            <select id="select-sintoma" required></select>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="diag-ubicacion">Paso 2: Ubicación geográfica y tipo de siembra</label>
+            <div class="fila-doble">
+              <select id="diag-ubicacion" required></select>
+              <select id="diag-cultivo" required></select>
+            </div>
+          </div>
+
+          <div class="vista-previa-contenedor" id="contenedor-preview">
+            <img id="img-preview" class="imagen-preview oculto" alt="Vista previa del cultivo">
+            <p id="texto-preview" class="texto-secundario">Sin fotografía adjunta (se usará el patrón visual seleccionado).</p>
+          </div>
+
+          <button type="submit" class="boton-accion">
+            Paso 3: Analizar Cultivo y Generar Plan de Acción
+          </button>
+        </form>
+
+        <div id="resultado-diagnostico" class="tarjeta-resultado"></div>
+      </div>
+    </section>
+
+    <!-- MÓDULO 2: PLANIFICADOR DE FERTILIZACIÓN Y RIEGO -->
+    <section id="mod-planificador" class="vista-modulo oculto">
+      <div class="encabezado-modulo">
+        <h2>2. Planificador de Fertilización y Riego</h2>
+        <span class="etiqueta-flujo">Algoritmo de Racionalización de Insumos</span>
+      </div>
+      <p class="descripcion-modulo">
+        Calcule la cantidad exacta de agua y fertilizante según la etapa fenológica de crecimiento y el área sembrada para evitar aplicaciones "al ojo".
+      </p>
+
+      <div class="layout-dos-columnas">
+        <form id="form-planificador" class="tarjeta-operativa">
+          <div class="campo-grupo">
+            <label for="plan-cultivo">Paso 1: Seleccione el tipo de siembra</label>
+            <select id="plan-cultivo" required></select>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="plan-etapa">Paso 2: Etapa fenológica del cultivo</label>
+            <select id="plan-etapa" required></select>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="plan-area">Paso 3: Área de la parcela (en metros cuadrados m²)</label>
+            <input id="plan-area" type="number" min="10" max="500000" value="2500" required>
+          </div>
+
+          <button type="submit" class="boton-accion">
+            Calcular Dosificación Exacta y Calendario
+          </button>
+        </form>
+
+        <div id="resultado-planificador" class="tarjeta-resultado"></div>
+      </div>
+    </section>
+
+    <!-- MÓDULO 3: SISTEMA DE ALERTA CLIMÁTICA PREDICTIVA -->
+    <section id="mod-clima" class="vista-modulo oculto">
+      <div class="encabezado-modulo">
+        <h2>3. Sistema de Alerta Climática Predictiva</h2>
+        <span class="etiqueta-flujo">Monitoreo microclimático geolocalizado</span>
+      </div>
+      <p class="descripcion-modulo">
+        Notificaciones sobre riesgos climáticos locales (heladas, exceso de lluvia, sequía) traducidas en consejos preventivos inmediatos para su parcela.
+      </p>
+
+      <div class="barra-filtro-clima">
+        <label for="clima-region">Filtrar alertas por región agrícola:</label>
+        <select id="clima-region"></select>
+      </div>
+
+      <div id="contenedor-alertas-clima" class="rejilla-tarjetas"></div>
+    </section>
+
+    <!-- MÓDULO 4: BITÁCORA DIGITAL DE RECURSOS Y ANALÍTICA -->
+    <section id="mod-bitacora" class="vista-modulo oculto">
+      <div class="encabezado-modulo">
+        <h2>4. Bitácora Digital de Recursos y Estadísticas</h2>
+        <span class="etiqueta-flujo">Privacidad garantizada: los datos pertenecen al productor</span>
+      </div>
+      <p class="descripcion-modulo">
+        Registro administrativo para controlar inventarios, gastos de producción e ingresos de cosecha, con analítica visual de rentabilidad.
+      </p>
+
+      <div id="resumen-financiero" class="rejilla-metricas-bitacora"></div>
+
+      <div class="layout-dos-columnas">
+        <form id="form-bitacora" class="tarjeta-operativa">
+          <h3 class="subtitulo-tarjeta">Nuevo registro administrativo</h3>
+
+          <div class="campo-grupo">
+            <label for="bit-tipo">Tipo de movimiento</label>
+            <select id="bit-tipo" required>
+              <option value="Ingreso por cosecha">Ingreso por venta de cosecha</option>
+              <option value="Gasto en fertilizantes/insumos">Gasto en fertilizantes o insumos</option>
+              <option value="Gasto operativo / riego">Gasto operativo / mano de obra / riego</option>
+              <option value="Inventario en bodega">Registro de inventario en bodega</option>
+            </select>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="bit-concepto">Concepto o lote de cultivo</label>
+            <input id="bit-concepto" type="text" maxlength="100" placeholder="Ej. Lote Café Caturra - Fertilizante orgánico" required>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="bit-monto">Monto en colones (₡)</label>
+            <input id="bit-monto" type="number" min="0" max="50000000" value="45000" required>
+          </div>
+
+          <button type="submit" class="boton-accion">Guardar en Bitácora</button>
+        </form>
+
+        <div class="tarjeta-resultado">
+          <h3 class="subtitulo-tarjeta">Gráfico de distribución y movimientos recientes</h3>
+          <div id="grafico-barras" class="contenedor-grafico"></div>
+          <ul id="lista-bitacora" class="lista-registros"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN COMERCIAL: PLANES, FORMAS DE PAGO Y ALIANZAS -->
+    <section id="mod-planes" class="vista-modulo oculto">
+      <div class="encabezado-modulo">
+        <h2>Planes SaaS, Medios de Pago y Alianzas Cooperativas</h2>
+        <span class="etiqueta-flujo">Distribución Directa (Canal Corto)</span>
+      </div>
+      <p class="descripcion-modulo">
+        Esquema accesible pensado para el productor costarricense sin inversión en sensores físicos, con soporte mediante comunidad en WhatsApp.
+      </p>
+
+      <div id="contenedor-planes" class="rejilla-tarjetas"></div>
+      <div id="contenedor-alianzas" class="rejilla-tarjetas" style="margin-top: 1.25rem;"></div>
+    </section>
+  </main>
+
+  <footer class="pie-app">
+    <p>
+      <strong>Agro-Nova</strong> — Plataforma Digital de Asistencia Técnica Integral (Costa Rica) | Desarrollado con base en el proyecto DN-0101 UCR Sede del Caribe.
+    </p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

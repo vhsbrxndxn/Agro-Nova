@@ -1,0 +1,31 @@
+/* Paleta "Agro-Nova Modernizada":
+   Atiende la recomendación del mercado meta (pág. 34) de modernizar la paleta gráfica
+   y tipografía conservando el verde agrícola y el acento tecnológico de los circuitos. */
+:root {
+  --color-fondo: #f2f6f3;
+  --color-superficie: #ffffff;
+  --color-superficie-alt: #e3ede6;
+  --color-texto: #132418;
+  --color-texto-secundario: #455a4b;
+
+  --color-verde-agro: #166534;
+  --color-verde-hover: #0f4624;
+  --color-circuito: #0e5a6f;
+  --color-borde: #c2d6c7;
+
+  --color-exito: #15803d;
+  --color-alerta: #b45309;
+  --color-alerta-fondo: #fef3c7;
+  --color-peligro: #b91c1c;
+  --color-peligro-fondo: #fee2e2;
+
+  --fuente-moderna: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fuente-mono: "Consolas", monospace;
+
+  --radio-md: 0.6rem;
+  --espacio-xs: 0.4rem;
+  --espacio-sm: 0.8rem;
+  --espacio-md: 1.25rem;
+  --espacio-lg: 1.75rem;
+  --ancho-app: 1160px;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agro-Nova | Manual de Usuario y Ficha Técnica</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="cabecera-contenedor">
+      <div class="marca-bloque">
+        <svg class="icono-marca" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M26 4C14 4 6 12 6 22c0 3.3 1.2 6 1.2 6l2.6-1.2C9.2 24.5 9 22.8 9 21c0-6.5 5.5-12 13-13-4.5 3-7 7.5-7 13h3c0-5 3-9.5 8-11v1c0 7-4.5 13-11 14.5V28c9-1.5 15-9.5 15-19V4h-4z"/>
+          <circle cx="16" cy="14" r="1.8"/>
+          <circle cx="20" cy="10" r="1.8"/>
+        </svg>
+        <div>
+          <span id="marca-nombre" class="marca-titulo">AGRO-NOVA</span>
+          <p id="marca-slogan" class="marca-slogan">Manual de Usuario y Base Documental</p>
+        </div>
+      </div>
+
+      <a href="index.html" class="boton-accion" style="text-decoration: none;">
+        Volver a la Aplicación Agro-Nova
+      </a>
+    </div>
+
+    <nav id="menu-filtros" class="navegacion-modulos" aria-label="Secciones del manual">
+      <button type="button" class="tab-modulo activo" data-vista="todas">Todo el Manual</button>
+      <button type="button" class="tab-modulo" data-vista="identidad">1. Identidad y Sitio</button>
+      <button type="button" class="tab-modulo" data-vista="modulos">2. Módulos y Requisitos</button>
+      <button type="button" class="tab-modulo" data-vista="mercado">3. Mercado y Problemas</button>
+      <button type="button" class="tab-modulo" data-vista="finanzas">4. Costos, Ingresos y Canales</button>
+      <button type="button" class="tab-modulo" data-vista="validacion">5. Encuesta y Sostenibilidad</button>
+      <button type="button" class="tab-modulo" data-vista="auditoria">6. No Disponible e Inconsistencias</button>
+    </nav>
+  </header>
+
+  <main class="contenedor-app">
+    <!-- Bloque de Manual de Usuario Operativo (máximo 3 interacciones por flujo) -->
+    <section class="vista-modulo">
+      <div class="encabezado-modulo">
+        <h2>Guía Rápida para el Agricultor (Flujo en 3 Interacciones)</h2>
+        <span class="etiqueta-flujo">Mejora de validación pág. 38: Tutorial y guía de uso</span>
+      </div>
+      <div class="pasos-manual">
+        <div class="paso-item">
+          <strong>1. Diagnóstico de Plagas</strong>
+          <p>1) Suba o tome foto de la hoja afectada. 2) Elija su región y cultivo. 3) Pulse analizar para ver el tratamiento orgánico o químico.</p>
+        </div>
+        <div class="paso-item">
+          <strong>2. Fertilización y Riego</strong>
+          <p>1) Seleccione su siembra. 2) Indique la etapa de crecimiento. 3) Ingrese el área en m² para obtener los litros de agua y kilos de abono exactos.</p>
+        </div>
+        <div class="paso-item">
+          <strong>3. Alerta Climática</strong>
+          <p>1) Entre a la pestaña de clima. 2) Filtre por su región (San Carlos, Cartago, Los Santos o Caribe). 3) Aplique el consejo preventivo del día.</p>
+        </div>
+        <div class="paso-item">
+          <strong>4. Bitácora y Modo Offline</strong>
+          <p>1) Active el botón Offline si está en el campo sin señal. 2) Registre sus gastos o cosechas. 3) Al volver la señal, pulse Online para sincronizar.</p>
+        </div>
+      </div>
+    </section>
+
+    <div id="criterio-documental" class="aviso-documental" role="note"></div>
+
+    <!-- Buscador en memoria -->
+    <section class="vista-modulo" style="padding: 0.85rem 1.25rem;">
+      <div class="campo-grupo">
+        <label for="buscador-memoria">Buscar término en la especificación documental (ej. SINPE, plagas, No disponible, Carmen):</label>
+        <input id="buscador-memoria" type="search" placeholder="Escriba para filtrar tarjetas en memoria...">
+      </div>
+    </section>
+
+    <!-- Contenedor donde js/manual.js inyecta los objetos y arreglos de js/datos-manual.js -->
+    <div id="contenedor-secciones" style="display: flex; flex-direction: column; gap: 1.25rem;"></div>
+  </main>
+
+  <footer id="pie-documental" class="pie-app"></footer>
+
+  <script type="module" src="js/manual.js"></script>
+</body>
+</html>
